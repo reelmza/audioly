@@ -185,9 +185,9 @@ body {
 .hero {
   position: relative;
   width: calc(100% + 10vmin);
-  height: 45vh;
+  height: 40vh;
   margin: -5vmin;
-  margin-bottom: 10vmin;
+  margin-bottom: 5vmin;
 }
 
 .hero-image {
@@ -199,6 +199,7 @@ body {
 
 .hero-image img {
   width: 100%;
+  margin-top: -10vmin;
 }
 
 .hero-image-overlay {
@@ -244,7 +245,7 @@ body {
 
 /* Featured  */
 .featured-tracks {
-  overflow: scroll;
+  /* overflow: scroll; */
   max-height: calc(72vmin + 4px);
 }
 

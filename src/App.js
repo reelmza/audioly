@@ -7,7 +7,6 @@ import audiolyLogo from "../src/images/audioly-logo.png";
 const App = () => {
   // Displays
   const [lyricsPageVisible, setLyricsPageVisible] = useState(false);
-  // const [homePageVisible, setHomePageVisible] = useState(true);
 
   // Lyrics state
   const [lyrics, setLyrics] = useState(`No lyrics yet, you shouldn't be seeing this page, please refresh app.
@@ -50,6 +49,7 @@ const App = () => {
         songThumb:
           "https://images.genius.com/483306c535608c27f9e3781b854dc91d.1000x1000x1.png",
         songKey: 23464,
+        songThumbHero: 'https://images.genius.com/483306c535608c27f9e3781b854dc91d.1000x1000x1.png'
       },
       {
         songArtist: "Alan Walker",
@@ -124,7 +124,7 @@ const App = () => {
       const options = {
         method: "GET",
         url: "https://genius-song-lyrics1.p.rapidapi.com/search",
-        params: { q: searchTerm, per_page: "6", page: "1" },
+        params: { q: searchTerm, per_page: "5", page: "1" },
         headers: {
           "X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
           "X-RapidAPI-Key":
@@ -146,6 +146,7 @@ const App = () => {
                 item.result.lyrics_owner_id + Math.floor(Math.random() * 10),
               songID: item.result.id,
               songThumb: item.result.song_art_image_thumbnail_url,
+              songThumbHero: item.result.song_art_image_url
             })
           );
 
@@ -357,7 +358,7 @@ const App = () => {
 
         <div className="hero">
           <div className="hero-image">
-            <img src={searchResult[0].songThumb} alt="unset" />
+            <img src={searchResult[0].songThumbHero} alt="unset" />
             <div className="hero-image-overlay"></div>
           </div>
           <div className="hero-text">
