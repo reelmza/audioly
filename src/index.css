@@ -289,7 +289,7 @@ footer {
 }
 
 footer p {
-  margin-right: 1vmin;
+  margin-right: 2vmin;
   font-size: 1.1em;
   line-height: 100%;
 }
@@ -299,8 +299,9 @@ footer p {
 .footer-images img {
   height: 100%;
 }
-.footer-images img:last-child {
-  margin-left: 2vmin;
+.footer-images img:first-child {
+  margin-right: 1vmin;
+  border-radius: 3px;
 }
 /* Lyrics */
 .lyrics {

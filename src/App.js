@@ -5,8 +5,8 @@ import axios from "axios";
 
 //Imasges
 import audiolyLogo from "../src/images/audioly-logo.png";
-import spotifyLogo from "../src/images/spotify-logo-long.png";
-import geniusLogo from "../src/images/genius-logo.png";
+import spotifyLogo from "../src/images/spotify-logo-long.svg";
+import geniusLogo from "../src/images/genius-logo.svg";
 
 const App = () => {
   // Displays
@@ -425,7 +425,7 @@ const App = () => {
         </div>
 
         <footer>
-          <p>Powered by</p>
+          <p>Powered by:</p>
           <div className="footer-images">
             <img src={geniusLogo} alt="Genius Logo png" />
             <img src={spotifyLogo} alt="Genius Logo png" />
