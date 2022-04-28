@@ -91,14 +91,14 @@ h5 {
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   font: 3.5vmin "Poppins", Futura, sans-serif;
 }
 
 .main {
   position: relative;
-  height: inherit;
+  height: 100%;
   width: inherit;
   overflow: hidden;
 
