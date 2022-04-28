@@ -267,7 +267,7 @@ h5.featured-title {
 }
 
 .featured-track__image {
-  height: 12vmin;
+  height: 13vmin;
   margin-right: 3vmin;
 }
 
@@ -278,6 +278,7 @@ h5.featured-title {
 
 .featured-track__text h6 {
   color: var(--heading-color);
+  font-size: 1.2em;
 }
 
 /* Lyrics */

@@ -83,14 +83,7 @@ const App = () => {
           "https://images.genius.com/15c9b067b886f2cf7dbd46badb317ba4.300x300x1.jpg",
         songKey: 43389,
       },
-      {
-        songArtist: "Simi",
-        songName: "Woman",
-        songID: 7291320,
-        songThumb:
-          "https://images.genius.com/b2308af468fd4063bb5d25f61b9b94c0.300x300x1.jpg",
-        songKey: 43284,
-      },
+
     ]);
 
     // Fetch search results
