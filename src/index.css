@@ -292,9 +292,8 @@ footer p {
   margin-right: 2vmin;
   font-size: 1.1em;
   line-height: 100%;
-  font-weight: 200;
-  font-style: italic;
 }
+
 .footer-images {
   height: 24px;
 }
@@ -527,13 +526,16 @@ audio {
 }
 
 .loading-screen img {
-  width: 64px;
+  width: 38px;
   border-radius: 5px;
-  margin-bottom: 1vmin;
-  animation: bulge 0.5s ease-in-out infinite alternate;
+  margin-bottom: 2.5vmin;
+  animation: bulge 0.3s ease-in-out infinite alternate;
 }
 .loading-screen p {
-  animation: bulge 0.5s ease-in-out infinite alternate;
+  /* animation: bulge 0.4s ease-in-out infinite alternate; */
+
+  text-align: center;
+  line-height: 105%;
 }
 @keyframes disolveIn {
   0% {

@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 
 //Imasges
-import audiolyLogo from "../src/images/audioly-logo.png";
+import audiolyLogo from "../src/images/audioly-logo.svg";
 import spotifyLogo from "../src/images/spotify-logo-long.svg";
 import geniusLogo from "../src/images/genius-logo.svg";
 
@@ -47,15 +47,15 @@ const App = () => {
     // Array of search results
     const [searchResult, setSearchResult] = useState([
       {
-        songArtist: "Kendrick Lamar",
-        songName: "Humble",
+        songArtist: "21 Savage",
+        songName: "Bank Account",
         songHot: false,
-        songID: 3039923,
+        songID: 3138854,
         songThumb:
           "https://images.genius.com/483306c535608c27f9e3781b854dc91d.1000x1000x1.png",
         songKey: 23464,
         songThumbHero:
-          "https://images.genius.com/483306c535608c27f9e3781b854dc91d.1000x1000x1.png",
+          "https://images.genius.com/7885b91f8d29c7b242f5f7926896f127.1000x1000x1.png",
       },
       {
         songArtist: "Alan Walker",
@@ -168,7 +168,6 @@ const App = () => {
     // Fetch Lyrics
     const fetchLyrics = (data) => {
       console.log(data.id);
-
       //API Call to fecth lyrics from ID
       const options = {
         method: "GET",
@@ -184,6 +183,7 @@ const App = () => {
         .request(options)
         .then(function (response) {
           if (response.data.meta.status !== 200) {
+            setIsLoading(false);
             setIsReporting([
               "translate(0, 0)",
               "Unfortunately, this lyrics have been removed, please try another song.",
@@ -395,7 +395,11 @@ const App = () => {
         </div>
 
         <div className="featured">
-          <h5 className="featured-title">Featured Artist</h5>
+          <h5 className="featured-title">
+            {searchResult[0].songArtist === "21 Savage"
+              ? "Featured songs"
+              : "Related Results"}
+          </h5>
           <div className="featured-tracks">
             {searchResult.slice(1, 6).map((item) => {
               return (
@@ -435,7 +439,9 @@ const App = () => {
         {isLoading && (
           <div className="loading-screen">
             <img src={audiolyLogo} alt="Audioly lOGO" />
-            <p>Fetching Music</p>
+            <p>
+              Fetching <br /> Music
+            </p>
           </div>
         )}
         <div
@@ -819,7 +825,9 @@ const App = () => {
         {isLoading && (
           <div className="loading-screen loading-screen--lyrics">
             <img src={audiolyLogo} alt="Audioly lOGO" />
-            <p>Fetching Audio Track</p>
+            <p>
+              Fetching <br /> Audio Track
+            </p>
           </div>
         )}
       </div>
