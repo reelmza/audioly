@@ -292,6 +292,8 @@ footer p {
   margin-right: 2vmin;
   font-size: 1.1em;
   line-height: 100%;
+  font-weight: 200;
+  font-style: italic;
 }
 .footer-images {
   height: 24px;
