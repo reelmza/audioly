@@ -2,14 +2,19 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useState } from "react";
 import axios from "axios";
+
+//Imasges
 import audiolyLogo from "../src/images/audioly-logo.png";
+import spotifyLogo from "../src/images/spotify-logo-long.png";
+import geniusLogo from "../src/images/genius-logo.png";
 
 const App = () => {
   // Displays
   const [lyricsPageVisible, setLyricsPageVisible] = useState(false);
 
   // Lyrics state
-  const [lyrics, setLyrics] = useState(`No lyrics yet, you shouldn't be seeing this page, please refresh app.
+  const [lyrics, setLyrics] =
+    useState(`No lyrics yet, you shouldn't be seeing this page, please refresh app.
 `);
   const [lyricsData, setLyricsData] = useState({});
 
@@ -49,7 +54,8 @@ const App = () => {
         songThumb:
           "https://images.genius.com/483306c535608c27f9e3781b854dc91d.1000x1000x1.png",
         songKey: 23464,
-        songThumbHero: 'https://images.genius.com/483306c535608c27f9e3781b854dc91d.1000x1000x1.png'
+        songThumbHero:
+          "https://images.genius.com/483306c535608c27f9e3781b854dc91d.1000x1000x1.png",
       },
       {
         songArtist: "Alan Walker",
@@ -83,7 +89,6 @@ const App = () => {
           "https://images.genius.com/15c9b067b886f2cf7dbd46badb317ba4.300x300x1.jpg",
         songKey: 43389,
       },
-
     ]);
 
     // Fetch search results
@@ -139,7 +144,7 @@ const App = () => {
                 item.result.lyrics_owner_id + Math.floor(Math.random() * 10),
               songID: item.result.id,
               songThumb: item.result.song_art_image_thumbnail_url,
-              songThumbHero: item.result.song_art_image_url
+              songThumbHero: item.result.song_art_image_url,
             })
           );
 
@@ -418,6 +423,14 @@ const App = () => {
             })}
           </div>
         </div>
+
+        <footer>
+          <p>Powered by</p>
+          <div className="footer-images">
+            <img src={geniusLogo} alt="Genius Logo png" />
+            <img src={spotifyLogo} alt="Genius Logo png" />
+          </div>
+        </footer>
 
         {isLoading && (
           <div className="loading-screen">

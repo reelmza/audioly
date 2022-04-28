@@ -247,8 +247,7 @@ body {
 
 /* Featured  */
 .featured-tracks {
-  /* overflow: scroll; */
-  max-height: calc(72vmin + 4px);
+  height: fit-content;
 }
 
 h5.featured-title {
@@ -282,6 +281,27 @@ h5.featured-title {
   color: var(--heading-color);
 }
 
+/* Footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  margin-right: 1vmin;
+  font-size: 1.1em;
+  line-height: 100%;
+}
+.footer-images {
+  height: 24px;
+}
+.footer-images img {
+  height: 100%;
+}
+.footer-images img:last-child {
+  margin-left: 2vmin;
+}
 /* Lyrics */
 .lyrics {
   font-weight: 500;
