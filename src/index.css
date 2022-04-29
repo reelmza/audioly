@@ -11,7 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#root.lite {
+#root.dark {
   --bg: #222327;
   --text-color: #757575;
   --heading-color: #cacaca;
@@ -39,7 +39,7 @@ html {
   --underline-color: #e0e0e0;
   --colored-box-shadow: #59a5c4;
   --box-shadow: #cfcfcf;
-  --transparent-bg: #f5f5f526;
+  --transparent-bg: #070707ad;
 
   --report-bg: rgb(252, 252, 252);
   --report-button-bg: linear-gradient(90deg, #5f1919, #ac0d0d);
@@ -189,7 +189,7 @@ body {
   width: calc(100% + 10vmin);
   height: 40vh;
   margin: -5vmin;
-  margin-bottom: 5vmin;
+  margin-bottom: 2vmin;
 }
 
 .hero-image {
@@ -214,7 +214,7 @@ body {
 
 .hero-text {
   position: absolute;
-  bottom: 0;
+  bottom: 5vmin;
   left: 5vmin;
 }
 
@@ -228,11 +228,10 @@ body {
   color: var(--accent);
 }
 
-/* Hero Button  */
 .hero-play-button {
   display: flex;
   position: absolute;
-  bottom: 0vmin;
+  bottom: 5vmin;
   right: 5vmin;
   border-radius: 50%;
   padding: 3.8vmin;
@@ -248,6 +247,7 @@ body {
 /* Featured  */
 .featured-tracks {
   height: fit-content;
+  margin-bottom: 4vmin;
 }
 
 h5.featured-title {
@@ -256,6 +256,7 @@ h5.featured-title {
 }
 
 .featured-track {
+  position: relative;
   display: flex;
   align-items: center;
   padding-bottom: 3vmin;
@@ -265,6 +266,8 @@ h5.featured-title {
 
 .featured-track:last-child {
   border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .featured-track__image {
@@ -281,6 +284,20 @@ h5.featured-title {
   color: var(--heading-color);
 }
 
+.featured-track__views {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 5vmin;
+  font-size: 0.9em;
+  font-weight: 200;
+  /* background: #000; */
+}
+
 /* Footer */
 footer {
   display: flex;
@@ -290,7 +307,7 @@ footer {
 
 footer p {
   margin-right: 2vmin;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 100%;
 }
 

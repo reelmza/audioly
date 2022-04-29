@@ -21,11 +21,11 @@ const App = () => {
   // Home Page
   const HomePage = () => {
     // Theme States & Functions
-    const [liteTheme, setLiteTheme] = useState(true);
+    const [darkTheme, setDarkTheme] = useState(true);
 
     const toggleTheme = () => {
-      document.getElementById("root").classList.toggle("lite");
-      setLiteTheme(!liteTheme);
+      document.getElementById("root").classList.toggle("dark");
+      setDarkTheme(!darkTheme);
       return console.log("Theme toggler clicked");
     };
 
@@ -47,47 +47,62 @@ const App = () => {
     // Array of search results
     const [searchResult, setSearchResult] = useState([
       {
-        songArtist: "21 Savage",
-        songName: "Bank Account",
+        songArtist: "Eminem",
+        songName: "Kamikaze",
         songHot: false,
-        songID: 3138854,
+        songID: 3930564,
         songThumb:
-          "https://images.genius.com/483306c535608c27f9e3781b854dc91d.1000x1000x1.png",
+          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
         songKey: 23464,
         songThumbHero:
-          "https://images.genius.com/7885b91f8d29c7b242f5f7926896f127.1000x1000x1.png",
+          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.1000x1000x1.png",
+        songViews: 312345,
       },
       {
-        songArtist: "Alan Walker",
-        songName: "Faded",
-        songID: 49384,
+        songArtist: "Eminem",
+        songName: "Fall",
+        songID: 3930586,
         songThumb:
-          "https://images.genius.com/708aef5551c9f670205b5cab3f38c8bd.300x300x1.jpg",
+          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
+
+        songViews: 10000,
         songKey: 49384,
       },
       {
-        songArtist: "ArrDee",
-        songName: "Oliver Twist",
-        songID: 6860383,
+        songArtist: "Eminem (Ft. Jessie Reyez)",
+        songName: "Good Guy",
+        songID: 3930557,
         songThumb:
-          "https://images.genius.com/958c27b087564fde685179f4198da8ea.300x300x1.jpg",
+          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
         songKey: 43384,
+        songViews: 2000,
       },
       {
-        songArtist: "Rugger",
-        songName: "Dior",
-        songID: 7430896,
+        songArtist: "Eminem",
+        songName: "Normal",
+        songID: 3930567,
         songThumb:
-          "https://images.genius.com/7f1197085fb639a828ef7d004cdaf0ae.300x300x1.jpg",
+          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
         songKey: 43381,
+        songViews: 100,
       },
       {
-        songArtist: "Wizkid",
-        songName: "Ojuelegba",
-        songID: 2173932,
+        songArtist: "Eminem",
+        songName: "Venom",
+        songID: 3930594,
         songThumb:
-          "https://images.genius.com/15c9b067b886f2cf7dbd46badb317ba4.300x300x1.jpg",
+          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
         songKey: 43389,
+        songViews: 52000,
+      },
+      {
+        songArtist: "Eminem",
+        songName: "The Ringer",
+        songID: 3930546,
+        songThumb:
+          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
+        songKey: 13389,
+        songViews: 13000,
       },
     ]);
 
@@ -228,7 +243,7 @@ const App = () => {
               {
                 <svg
                   style={{
-                    transform: liteTheme
+                    transform: darkTheme
                       ? "translateY(0vmin)"
                       : "translateY(10vmin)",
                   }}
@@ -257,7 +272,7 @@ const App = () => {
               {
                 <svg
                   style={{
-                    transform: liteTheme
+                    transform: darkTheme
                       ? "translateY(10vmin)"
                       : "translateY(0)",
                   }}
@@ -362,8 +377,7 @@ const App = () => {
           <div className="hero-text">
             <h1>{searchResult[0].songArtist}</h1>
             <h6>
-              {searchResult[0].songName} |{" "}
-              {searchResult[0].songHot ? "Song trending" : "Not trending"}
+              {searchResult[0].songName} {searchResult[0].songHot ? "" : ""}
             </h6>
           </div>
           <button
@@ -395,11 +409,11 @@ const App = () => {
         </div>
 
         <div className="featured">
-          <h5 className="featured-title">
+          {/* <h5 className="featured-title">
             {searchResult[0].songArtist === "21 Savage"
               ? "Featured songs"
               : "Related Results"}
-          </h5>
+          </h5> */}
           <div className="featured-tracks">
             {searchResult.slice(1, 6).map((item) => {
               return (
@@ -421,6 +435,28 @@ const App = () => {
                   <div className="featured-track__text">
                     <h6>{item.songName}</h6>
                     <p>{item.songArtist}</p>
+                  </div>
+                  <div className="featured-track__views">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-eye"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    <span>
+                      {item.songViews < 999
+                        ? `${item.songViews / 1000}k`
+                        : `${Math.round(item.songViews / 1000)}k`}
+                    </span>
                   </div>
                 </div>
               );
