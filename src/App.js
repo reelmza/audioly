@@ -429,7 +429,7 @@ const App = () => {
         </div>
 
         <footer>
-          <p>Powered by:</p>
+          <p>powered by:</p>
           <div className="footer-images">
             <img src={geniusLogo} alt="Genius Logo png" />
             <img src={spotifyLogo} alt="Genius Logo png" />

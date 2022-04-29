@@ -304,14 +304,17 @@ footer p {
   margin-right: 1vmin;
   border-radius: 3px;
 }
+
 /* Lyrics */
 .lyrics {
   font-weight: 500;
-  width: 95%;
+  width: calc(100% + 10vmin + 8px);
   display: flex;
   flex-direction: column;
 
   font-size: 1em;
+  margin-left: -5vmin;
+  padding: 0 5vmin;
   padding-bottom: 50%;
   color: var(--text-color);
   flex-grow: 1;
@@ -322,8 +325,11 @@ footer p {
 
 .lyrics a {
   pointer-events: none;
-  color: var(--accent);
-  font-weight: 300;
+  color: var(--text-color);
+}
+
+.lyrics p {
+  font-size: 1.2em;
 }
 
 /* Audio Player */
