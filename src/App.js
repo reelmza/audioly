@@ -631,8 +631,7 @@ const App = () => {
         },
         headers: {
           "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
-          "X-RapidAPI-Key":
-            "9cc6e574c9msh9ad07da4150c8a2p1b8cadjsnd11d1d3b47aa",
+          "X-RapidAPI-Key": process.env.REACT_APP_API_KEY_SPOTIFY,
         },
       };
 
@@ -666,8 +665,7 @@ const App = () => {
         params: { ids: data.id },
         headers: {
           "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
-          "X-RapidAPI-Key":
-            "9cc6e574c9msh9ad07da4150c8a2p1b8cadjsnd11d1d3b47aa",
+          "X-RapidAPI-Key": process.env.REACT_APP_API_KEY_SPOTIFY,
         },
       };
       setIsLoading(true);
