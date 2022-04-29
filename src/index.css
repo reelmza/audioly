@@ -329,7 +329,8 @@ footer p {
 }
 
 .lyrics p {
-  font-size: 1.2em;
+  font-size: 1.1em;
+  padding-right: 5vmin;
 }
 
 /* Audio Player */
