@@ -11,7 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#root {
+#root.lite {
   --bg: #222327;
   --text-color: #757575;
   --heading-color: #cacaca;
@@ -30,7 +30,7 @@ html {
   --white: rgb(228, 225, 225);
 }
 
-#root.lite {
+#root {
   --bg: #fcfcfc;
   --text-color: #707070;
   --hero-heading-color: rgb(0, 0, 0);

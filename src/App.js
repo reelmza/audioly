@@ -21,7 +21,7 @@ const App = () => {
   // Home Page
   const HomePage = () => {
     // Theme States & Functions
-    const [liteTheme, setLiteTheme] = useState(false);
+    const [liteTheme, setLiteTheme] = useState(true);
 
     const toggleTheme = () => {
       document.getElementById("root").classList.toggle("lite");
