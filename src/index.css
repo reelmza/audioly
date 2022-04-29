@@ -283,6 +283,10 @@ h5.featured-title {
   color: var(--heading-color);
 }
 
+.featured-track__text p {
+  width: 70%;
+}
+
 .featured-track__options {
   display: flex;
   align-items: center;
@@ -301,10 +305,10 @@ h5.featured-title {
   justify-content: center;
   flex-direction: column;
 }
-.featured-track__share {
-  /* height: fit-content; */
+.featured-track__trend {
+  position: absolute;
+  right: 12vmin;
   display: flex;
-  margin-right: 3vmin;
 }
 /* Footer */
 footer {

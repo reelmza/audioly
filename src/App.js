@@ -3,7 +3,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-//Imasges
+//Images
 import audiolyLogo from "../src/images/audioly-logo.svg";
 import spotifyLogo from "../src/images/spotify-logo-long.svg";
 import geniusLogo from "../src/images/genius-logo.svg";
@@ -137,11 +137,10 @@ const App = () => {
       const options = {
         method: "GET",
         url: "https://genius-song-lyrics1.p.rapidapi.com/search",
-        params: { q: searchTerm, per_page: "5", page: "1" },
+        params: { q: searchTerm, per_page: "6", page: "1" },
         headers: {
           "X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
-          "X-RapidAPI-Key":
-            "9cc6e574c9msh9ad07da4150c8a2p1b8cadjsnd11d1d3b47aa",
+          "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
         },
       };
 
@@ -160,6 +159,7 @@ const App = () => {
               songID: item.result.id,
               songThumb: item.result.song_art_image_thumbnail_url,
               songThumbHero: item.result.song_art_image_url,
+              songViews: item.result.stats.pageviews,
             })
           );
 
@@ -437,25 +437,41 @@ const App = () => {
                     <p>{item.songArtist}</p>
                   </div>
                   <div className="featured-track__options">
-                    <div className="featured-track__share">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-share-2"
-                      >
-                        <circle cx="18" cy="5" r="3"></circle>
-                        <circle cx="6" cy="12" r="3"></circle>
-                        <circle cx="18" cy="19" r="3"></circle>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                      </svg>
+                    <div className="featured-track__trend">
+                      {item.songHot && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-trending-up"
+                        >
+                          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                          <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                      )}
+                      {!item.songHot && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-trending-down"
+                        >
+                          <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                          <polyline points="17 18 23 18 23 12"></polyline>
+                        </svg>
+                      )}
                     </div>
                     <div className="featured-track__views">
                       <svg
@@ -474,9 +490,11 @@ const App = () => {
                         <circle cx="12" cy="12" r="3"></circle>
                       </svg>
                       <span>
-                        {item.songViews < 999
-                          ? `${item.songViews / 1000}k`
-                          : `${Math.round(item.songViews / 1000)}k`}
+                        {item.songViews
+                          ? item.songViews < 999
+                            ? `${item.songViews / 1000}k`
+                            : `${Math.round(item.songViews / 1000)}k`
+                          : "Nil"}
                       </span>
                     </div>
                   </div>
