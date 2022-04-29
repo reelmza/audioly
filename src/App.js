@@ -47,62 +47,76 @@ const App = () => {
     // Array of search results
     const [searchResult, setSearchResult] = useState([
       {
-        songArtist: "Eminem",
-        songName: "Kamikaze",
+        songArtist: "Sia",
         songHot: false,
-        songID: 3930564,
+        songID: 378195,
+        songKey: 47106,
+        songName: "Chandelier",
         songThumb:
-          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
-        songKey: 23464,
+          "https://images.genius.com/5bcfb76690b3fb068a317c76579b70b5.300x300x1.jpg",
         songThumbHero:
-          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.1000x1000x1.png",
-        songViews: 312345,
+          "https://images.genius.com/5bcfb76690b3fb068a317c76579b70b5.1000x1000x1.jpg",
+        songViews: 1965550,
       },
       {
-        songArtist: "Eminem",
-        songName: "Fall",
-        songID: 3930586,
+        songArtist: "Sia (Ft. Kendrick Lamar)",
+        songHot: false,
+        songID: 2849661,
+        songKey: 266340,
+        songName: "The Greatest",
         songThumb:
-          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
-
-        songViews: 10000,
-        songKey: 49384,
+          "https://images.genius.com/978a751aae9b75bfabc8aed93f88e440.300x300x1.jpg",
+        songThumbHero:
+          "https://images.genius.com/978a751aae9b75bfabc8aed93f88e440.1000x1000x1.jpg",
+        songViews: 1355498,
       },
       {
-        songArtist: "Eminem (Ft. Jessie Reyez)",
-        songName: "Good Guy",
-        songID: 3930557,
+        songArtist: "Sia",
+        songHot: false,
+        songID: 2391084,
+        songKey: 672400,
+        songName: "Cheap Thrills",
         songThumb:
-          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
-        songKey: 43384,
-        songViews: 2000,
+          "https://images.genius.com/1338ed41f569e94944c52d58812c9152.300x300x1.png",
+        songThumbHero:
+          "https://images.genius.com/1338ed41f569e94944c52d58812c9152.810x810x1.png",
+        songViews: 1348743,
       },
       {
-        songArtist: "Eminem",
-        songName: "Normal",
-        songID: 3930567,
+        songArtist: "LSD",
+        songHot: false,
+        songID: 3860353,
+        songKey: 3489632,
+        songName: "Thunderclouds",
         songThumb:
-          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
-        songKey: 43381,
-        songViews: 100,
+          "https://images.genius.com/8e88599803b10206317803336e47669f.300x300x1.jpg",
+        songThumbHero:
+          "https://images.genius.com/8e88599803b10206317803336e47669f.1000x1000x1.jpg",
+        songViews: 1072920,
       },
       {
-        songArtist: "Eminem",
-        songName: "Venom",
-        songID: 3930594,
+        songArtist: "Sia",
+        songHot: false,
+        songID: 3276441,
+        songKey: 5211716,
+        songName: "Snowman",
         songThumb:
-          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
-        songKey: 43389,
-        songViews: 52000,
+          "https://images.genius.com/3a06feb5809656513371cd99a91e92b1.300x300x1.png",
+        songThumbHero:
+          "https://images.genius.com/3a06feb5809656513371cd99a91e92b1.999x999x1.png",
+        songViews: 854993,
       },
       {
-        songArtist: "Eminem",
-        songName: "The Ringer",
-        songID: 3930546,
+        songArtist: "Sia",
+        songHot: false,
+        songID: 2954007,
+        songKey: 3195748,
+        songName: "Helium",
         songThumb:
-          "https://images.genius.com/4a9ce06a1f463b0c24c98c1870d4566f.300x300x1.png",
-        songKey: 13389,
-        songViews: 13000,
+          "https://images.genius.com/71bb209b9ba0012ad37b5e1763c12173.300x300x1.jpg",
+        songThumbHero:
+          "https://images.genius.com/71bb209b9ba0012ad37b5e1763c12173.1000x1000x1.jpg",
+        songViews: 674796,
       },
     ]);
 
@@ -165,6 +179,7 @@ const App = () => {
 
           setSearchResult(resultArray);
           setIsLoading(false);
+          console.log(resultArray);
         })
         .catch(function (error) {
           console.error(error);
@@ -445,7 +460,7 @@ const App = () => {
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="1.5"
+                          stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           class="feather feather-trending-up"
@@ -462,7 +477,7 @@ const App = () => {
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="1.5"
+                          stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           class="feather feather-trending-down"

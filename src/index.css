@@ -305,9 +305,10 @@ h5.featured-title {
   justify-content: center;
   flex-direction: column;
 }
+
 .featured-track__trend {
   position: absolute;
-  right: 12vmin;
+  right: 10vmin;
   display: flex;
 }
 /* Footer */
