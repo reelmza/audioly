@@ -189,8 +189,7 @@ const App = () => {
         url: `https://genius-song-lyrics1.p.rapidapi.com/songs/${data.id}/lyrics`,
         headers: {
           "X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
-          "X-RapidAPI-Key":
-            "9cc6e574c9msh9ad07da4150c8a2p1b8cadjsnd11d1d3b47aa",
+          "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
         },
       };
       setIsLoading(true);
