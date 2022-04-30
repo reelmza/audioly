@@ -258,6 +258,7 @@ h5.featured-title {
 .featured-track {
   position: relative;
   display: flex;
+  width: 100%;
   align-items: center;
   padding-bottom: 3vmin;
   margin-bottom: 3vmin;
@@ -279,12 +280,17 @@ h5.featured-title {
   border-radius: 50%;
 }
 
+.featured-track__text {
+  flex-grow: 1;
+}
 .featured-track__text h6 {
   color: var(--heading-color);
+  width: 80%;
 }
 
 .featured-track__text p {
-  width: 70%;
+  width: 80%;
+  font-size: 0.9em;
 }
 
 .featured-track__options {
@@ -322,10 +328,11 @@ footer p {
   margin-right: 2vmin;
   font-size: 1em;
   line-height: 100%;
+  font-weight: 200;
 }
 
 .footer-images {
-  height: 1em;
+  height: 1.3em;
 }
 .footer-images img {
   height: 100%;

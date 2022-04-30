@@ -455,12 +455,12 @@ const App = () => {
                       {item.songHot && (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
+                          width="16"
+                          height="16"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
+                          stroke-width="1.5"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           class="feather feather-trending-up"
@@ -472,12 +472,12 @@ const App = () => {
                       {!item.songHot && (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
+                          width="16"
+                          height="16"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
+                          stroke-width="1.5"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           class="feather feather-trending-down"
@@ -506,8 +506,10 @@ const App = () => {
                       <span>
                         {item.songViews
                           ? item.songViews < 999
-                            ? `${item.songViews / 1000}k`
-                            : `${Math.round(item.songViews / 1000)}k`
+                            ? `${item.songViews}`
+                            : item.songViews < 9999
+                            ? `${Math.round(item.songViews / 1000)}k`
+                            : `${Math.round(item.songViews / 10000)}M`
                           : "Nil"}
                       </span>
                     </div>
@@ -519,10 +521,19 @@ const App = () => {
         </div>
 
         <footer>
-          <p>powered by:</p>
+          <p></p>
           <div className="footer-images">
-            <img src={geniusLogo} alt="Genius Logo png" />
-            <img src={spotifyLogo} alt="Genius Logo png" />
+            <img
+              src={audiolyLogo}
+              style={{ marginRight: "1vmin" }}
+              alt="Spotify Logo png"
+            />
+            <img
+              src={geniusLogo}
+              style={{ marginRight: "1vmin" }}
+              alt="Genius Logo png"
+            />
+            <img src={spotifyLogo} alt="Spotify Logo png" />
           </div>
         </footer>
 
