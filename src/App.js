@@ -593,12 +593,9 @@ const App = () => {
 
   // Lyrics Page
   const Lyrics = () => {
-    const audioPlayer = document.getElementById("audio-wrapper");
-
     return (
       <div
         className="lyrics"
-        style={{ paddingBottom: audioPlayer != null ? "50%" : "20%" }}
         dangerouslySetInnerHTML={{ __html: lyrics }}
       ></div>
     );
@@ -886,13 +883,14 @@ const App = () => {
 
         {!audioGotten && (
           <button className="audio-overlay" onClick={() => searchSongAudio()}>
-            Play Sample Audio
+            Play Audio
           </button>
         )}
 
         <button
           className="audio-overlay audio-overlay--back"
           onClick={() => setLyricsPageVisible(!lyricsPageVisible)}
+          style={{ bottom: !audioGotten ? "unset" : "12.5vmin" }}
         >
           Back
         </button>
