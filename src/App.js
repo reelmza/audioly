@@ -519,12 +519,12 @@ const App = () => {
           <div className="footer-images">
             <img
               src={audiolyLogo}
-              style={{ marginRight: "1vmin" }}
+              style={{ marginRight: "2vmin" }}
               alt="Spotify Logo png"
             />
             <img
               src={geniusLogo}
-              style={{ marginRight: "1vmin" }}
+              style={{ marginRight: "2vmin" }}
               alt="Genius Logo png"
             />
             <img src={spotifyLogo} alt="Spotify Logo png" />
