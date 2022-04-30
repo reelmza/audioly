@@ -9,6 +9,10 @@ import spotifyLogo from "../src/images/spotify-logo-long.svg";
 import geniusLogo from "../src/images/genius-logo.svg";
 
 const App = () => {
+  window.onpopstate = function (event) {
+    event.preventDefault();
+    window.alert("You wan leave");
+  };
   // Displays
   const [lyricsPageVisible, setLyricsPageVisible] = useState(false);
 
