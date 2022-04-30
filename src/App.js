@@ -9,30 +9,11 @@ import spotifyLogo from "../src/images/spotify-logo-long.svg";
 import geniusLogo from "../src/images/genius-logo.svg";
 
 const App = () => {
-  window.addEventListener("beforeunload", (event) => {
-    event.preventDefault();
-    if (window.event) {
-      if (window.event.clientX < 40 && window.event.clientY < 0) {
-        alert("Browser back button is clicked...");
-      } else {
-        alert("Browser refresh button is clicked...");
-      }
-    } else {
-      if (event.currentTarget.performance.navigation.type == 1) {
-        alert("Browser refresh button is clicked...");
-      }
-      if (event.currentTarget.performance.navigation.type == 2) {
-        alert("Browser back button is clicked...");
-      }
-    }
-  });
   // Displays
   const [lyricsPageVisible, setLyricsPageVisible] = useState(false);
 
   // Lyrics state
-  const [lyrics, setLyrics] =
-    useState(`No lyrics yet, you shouldn't be seeing this page, please refresh app.
-`);
+  const [lyrics, setLyrics] = useState(``);
   const [lyricsData, setLyricsData] = useState({});
 
   // Home Page
@@ -259,7 +240,6 @@ const App = () => {
           console.error(error);
         });
     };
-
     return (
       <div className="home-page" id="home-page">
         <div className="navigation">
@@ -613,9 +593,12 @@ const App = () => {
 
   // Lyrics Page
   const Lyrics = () => {
+    const audioPlayer = document.getElementById("audio-wrapper");
+
     return (
       <div
         className="lyrics"
+        style={{ paddingBottom: audioPlayer != null ? "50%" : "20%" }}
         dangerouslySetInnerHTML={{ __html: lyrics }}
       ></div>
     );
@@ -764,10 +747,25 @@ const App = () => {
       return (document.getElementById("audio-file").muted = true);
     };
 
+    window.addEventListener("beforeunload", function (e) {
+      //you implement this logic...
+      if (lyricsPageVisible) {
+        //following two lines will cause the browser to ask the user if they
+        setIsReporting([
+          "translate(0, 0)",
+          "Please, Use In-App buttons to navigate.",
+        ]);
+        //want to leave. The text of this dialog is controlled by the browser.
+        e.preventDefault(); //per the standard
+        e.returnValue = ""; //required for Chrome
+      }
+      //else: user is allowed to leave without a warning dialog
+    });
+
     return (
       <div className="audio-player">
         {audioGotten && (
-          <div className="audio-wrapper">
+          <div className="audio-wrapper" id="audio-wrapper">
             <div className="audio-info">
               <div className="audio-info__image">
                 <img src={lyricsData.thumbnail} alt={lyricsData.title} />
@@ -891,6 +889,13 @@ const App = () => {
             Play Sample Audio
           </button>
         )}
+
+        <button
+          className="audio-overlay audio-overlay--back"
+          onClick={() => setLyricsPageVisible(!lyricsPageVisible)}
+        >
+          Back
+        </button>
 
         <div
           className="report-screen report-screen--lyrics"

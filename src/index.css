@@ -352,7 +352,7 @@ footer p {
   font-size: 1em;
   margin-left: -5vmin;
   padding: 0 5vmin;
-  padding-bottom: 50%;
+  padding-bottom: 20%;
   color: var(--text-color);
   flex-grow: 1;
   overflow: scroll;
@@ -466,10 +466,16 @@ footer p {
 
 .audio-overlay {
   position: absolute;
+  left: 18vmin;
   color: var(--white);
   padding: 1.5vmin 3.5vmin;
   border-radius: 30px;
   font-weight: 300;
+}
+
+.audio-overlay--back {
+  left: 0vmin;
+  bottom: 12.5vmin;
 }
 
 audio {
