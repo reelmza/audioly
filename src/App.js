@@ -160,7 +160,6 @@ const App = () => {
         .request(options)
         .then(function (response) {
           const data = response.data.response.hits;
-
           data.map((item) =>
             resultArray.push({
               songArtist: item.result.artist_names,
@@ -174,10 +173,8 @@ const App = () => {
               songViews: item.result.stats.pageviews,
             })
           );
-
           setSearchResult(resultArray);
           setIsLoading(false);
-          console.log(resultArray);
         })
         .catch(function (error) {
           console.error(error);
@@ -195,7 +192,7 @@ const App = () => {
 
     // Fetch Lyrics
     const fetchLyrics = (data) => {
-      console.log(data.id);
+      console.log(`Song ID: ${data.id}`);
       //API Call to fecth lyrics from ID
       const options = {
         method: "GET",
@@ -225,8 +222,8 @@ const App = () => {
             artist: data.artist,
             thumbnail: data.thumbnail,
           });
-          let lyrics = response.data.response.lyrics.lyrics.body.html;
 
+          let lyrics = response.data.response.lyrics.lyrics.body.html;
           setLyrics(lyrics);
           setLyricsPageVisible(!lyricsPageVisible);
           return setIsLoading(false);
@@ -457,10 +454,10 @@ const App = () => {
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="feather feather-trending-up"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="feather feather-trending-up"
                         >
                           <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
                           <polyline points="17 6 23 6 23 12"></polyline>
@@ -474,10 +471,10 @@ const App = () => {
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="feather feather-trending-down"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="feather feather-trending-down"
                         >
                           <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
                           <polyline points="17 18 23 18 23 12"></polyline>
@@ -492,10 +489,10 @@ const App = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-eye"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="feather feather-eye"
                       >
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                         <circle cx="12" cy="12" r="3"></circle>
@@ -554,10 +551,10 @@ const App = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-alert-octagon"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-alert-octagon"
             >
               <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
               <line x1="12" y1="8" x2="12" y2="12"></line>
@@ -576,10 +573,10 @@ const App = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-arrow-left"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-arrow-left"
             >
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
@@ -631,7 +628,7 @@ const App = () => {
 
         setCurrentTime(Math.round(newTime));
       } catch (error) {
-        console.log("Audio not mounted");
+        return;
       }
     };
     const countInterval = setInterval(setAudioDuration, 1000);
@@ -807,10 +804,10 @@ const App = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-volume-x"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="feather feather-volume-x"
                   >
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                     <line x1="23" y1="9" x2="17" y2="15"></line>
@@ -846,10 +843,10 @@ const App = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-pause"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="feather feather-pause"
                   >
                     <rect x="6" y="4" width="4" height="16"></rect>
                     <rect x="14" y="4" width="4" height="16"></rect>
@@ -907,10 +904,10 @@ const App = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-alert-octagon"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-alert-octagon"
             >
               <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
               <line x1="12" y1="8" x2="12" y2="12"></line>
@@ -929,10 +926,10 @@ const App = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-arrow-left"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-arrow-left"
             >
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
