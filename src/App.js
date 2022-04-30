@@ -762,7 +762,7 @@ const App = () => {
     return (
       <div className="audio-player">
         {audioGotten && (
-          <div className="audio-wrapper" id="audio-wrapper">
+          <div className="audio-wrapper">
             <div className="audio-info">
               <div className="audio-info__image">
                 <img src={lyricsData.thumbnail} alt={lyricsData.title} />
